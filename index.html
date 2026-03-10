@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prins Document Portal</title>
+  <style>
+    :root {
+      --blue-dark: #1b5faf;
+      --blue-mid: #4fa7e8;
+      --blue-light: #e8f5ff;
+      --white: #ffffff;
+      --text: #154273;
+      --shadow: 0 18px 40px rgba(18, 71, 135, 0.16);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #dff1ff 0%, #f4fbff 45%, #cbe7ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("background1.jpg") center center / 70% no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  width: min(1050px, 100%);
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(27, 95, 175, 0.12);
+  border-radius: 34px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+    .shell {
+      width: min(1050px, 100%);
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(27, 95, 175, 0.12);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      padding: 48px 32px 28px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(232,245,255,0.72));
+    }
+
+    .logo-wrap {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 18px;
+      padding: 16px;
+      border-radius: 28px;
+      background: var(--white);
+      box-shadow: 0 14px 30px rgba(27,95,175,0.14);
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--blue-dark);
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 12px auto 0;
+      line-height: 1.6;
+      color: #4773a4;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(260px, 1fr));
+      gap: 24px;
+      padding: 26px 32px 36px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #ffffff, #eef8ff);
+      border: 1px solid rgba(27,95,175,0.10);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 28px rgba(27,95,175,0.10);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 260px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #dff1ff;
+      color: var(--blue-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--blue-dark);
+    }
+
+    .card p {
+      margin: 0;
+      color: #5b7ea5;
+      line-height: 1.6;
+      font-size: 1rem;
+      flex: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 64px;
+      padding: 16px 22px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+      color: var(--white);
+      box-shadow: 0 14px 24px rgba(27,95,175,0.18);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #ffffff, #dff1ff);
+      color: var(--blue-dark);
+      border: 2px solid rgba(27,95,175,0.12);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 0 24px 28px;
+      color: #6587ac;
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding: 36px 20px 18px; }
+      .grid {
+        grid-template-columns: 1fr;
+        padding: 20px 20px 28px;
+      }
+      .footer { padding: 0 20px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="logo-wrap">
+        <img src="STD Prins Logo.png" alt="Prins logo" />
+      </div>
+      <h1>Niagara Propagators</h1>
+      <small>745 Concession 7 Rd, St. Davids, ON L0S 1J0</small>
+      <p class="subtitle">Choose a document below .</p>
+    </section>
+
+    <section class="grid">
+  <article class="card">
+    <span class="eyebrow">Drawing</span>
+    <h2>P&amp;ID</h2>
+    <p>Open the process and instrumentation document.</p>
+    <a class="btn btn-primary" href="viewer.html?doc=24-4591_HE-300_Heating%20Schematic.pdf&title=HE-300%20Heating%20Schematic">
+      Open P&amp;ID
+    </a>
+  </article>
+
+  <article class="card">
+    <span class="eyebrow">Drawing</span>
+    <h2>Transport Lines</h2>
+    <p>Open the transport lines document.</p>
+    <a class="btn btn-secondary" href="viewer.html?doc=24-4591_HE-600_REV%20A_%20Transport%20lines.pdf&title=HE-600%20Transport%20Lines">
+      Open Transport Lines
+    </a>
+  </article>
+</section>
+
+
+    <div class="footer">
+      © 2026-Prins Greenhouses. All rights reserved. The attached drawings are property of Prins Greenhouses and may not be reproduced, copied, or used for any purpose other than review at Niagara Propegators without express written permission.
+    </div>
+  </main>
+</body>
+</html>
