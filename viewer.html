@@ -177,27 +177,34 @@
   </main>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const doc = params.get('doc');
-    const title = params.get('title') || 'Document Viewer';
+  const params = new URLSearchParams(window.location.search);
+  const doc = params.get('doc');
+  const title = params.get('title') || 'Document Viewer';
 
-    document.getElementById('docTitle').textContent = title;
+  document.getElementById('docTitle').textContent = title;
 
-    const frame = document.getElementById('pdfFrame');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const viewerCard = document.getElementById('viewerCard');
+  const frame = document.getElementById('pdfFrame');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const viewerCard = document.getElementById('viewerCard');
 
-    if (doc) {
-      frame.src = doc + "#zoom=page-width";
-      downloadBtn.href = doc;
-      downloadBtn.setAttribute('target', '_blank');
+  const isMobile = window.innerWidth <= 768;
+
+  if (doc) {
+    downloadBtn.href = doc;
+
+    if (isMobile) {
+      window.location.href = doc + "#zoom=page-width";
     } else {
-      viewerCard.innerHTML = '<div class="empty">No document was selected.<br />Go back to the home page and choose a file to view.</div>';
-      downloadBtn.style.display = 'none';
+      frame.src = doc + "#zoom=page-width";
     }
-  </script>
+  } else {
+    viewerCard.innerHTML = '<div class="empty">No document was selected.<br />Go back to the home page and choose a file to view.</div>';
+    downloadBtn.style.display = 'none';
+  }
+</script>
 </body>
 </html>
+
 
 
 
