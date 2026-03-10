@@ -188,7 +188,7 @@
     const viewerCard = document.getElementById('viewerCard');
 
     if (doc) {
-      frame.src = doc;
+      frame.src = doc + "#zoom=page-fit";
       downloadBtn.href = doc;
       downloadBtn.setAttribute('target', '_blank');
     } else {
@@ -198,6 +198,7 @@
   </script>
 </body>
 </html>
+
 
 
 
